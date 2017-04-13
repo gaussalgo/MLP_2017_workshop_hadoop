@@ -8,13 +8,13 @@ The goal of this workshop is to give attendees a blueprint for building an end-t
 
 ## speakers & mentors
 
-Johnson Darkwah - Architect
+Johnson Darkwah - Big Data Solution Architect @gaussalgo
 
-Karel Vaculik - Data Scientist
+Karel Vaculik - Data Scientist @gaussalgo
 
-Jiri Polcar - CDS
+Jiri Polcar - Chief Data Scientist @gaussalgo
 
-Balazs Gaspar - Cloudera Engineer
+Balazs Gaspar - Pre-sales Engineer @Cloudera
 
 ## setup
 
@@ -31,3 +31,12 @@ The workshop material assumes you have knowledge and experience sufficient to:
 - Preparing a Linux platform for production use (centOS)
 - Python programming skills
 - Understanding you cloud provider environment
+
+## next steps
+
+* Basics of production Hadoop ecosystems and challenges ahead.
+* Your first proper cluster. 
+* Cool we have a cluster. Where's the data?
+* How to get to the machine learning part fast.
+* Handling diverse workloads
+* Simplifying production ML job lifecycles.
