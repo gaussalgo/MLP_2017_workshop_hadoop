@@ -20,3 +20,22 @@ For the workshop we will use CentOS 7.3 images, but you are welcomed to try out 
 ### Networking
 
 Each instance needs to be connected to a private network so that inter-cluster communication doesn't go through the public internet. At most cloud providers the private networking option has to be specified and instances should be in the same zone.
+
+
+### Digital Ocean toolkit
+
+**Terraform**
+
+* automates droplet creating and destroying
+* utilizes digital ocean v2 api
+* requires a generated token for access
+
+
+
+### Other alternatives outside the scope of the workshop
+
+**Cloudera Director**
+
+* simplest solution for Cloud installations in AWS, Azure and Google Cloud Platform
+* installs supported Cloudera clusters from scratch to production ready systems
+*

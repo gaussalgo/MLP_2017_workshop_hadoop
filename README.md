@@ -1,6 +1,6 @@
 # MLP 2017 - Advanced data analysis on Hadoop clusters workshop
 
-This repository holds the materials for the workshop materials for the Machine Learning Prague 2017 workshop created by Gauss Algorithmic focusing on methods and techniques of advanced data analysis we've used in enterprise environments.
+This repository holds the materials for the workshop materials for the Machine Learning Prague 2017 workshop created by Gauss Algorithmic, focusing on methods and techniques of advanced data analysis we've used in enterprise environments.
 
 ## goal of the workshop
 
@@ -8,21 +8,17 @@ The goal of this workshop is to give attendees a blueprint for building an end-t
 
 ## speakers & mentors
 
-Johnson Darkwah - Big Data Solution Architect @gaussalgo
+Johnson Darkwah - Big Data Solution Architect - Gauss Algorithmic
 
-Karel Vaculik - Data Scientist @gaussalgo
+Karel Vaculik - Data Scientist - Gauss Algorithmic
 
-Jiri Polcar - Chief Data Scientist @gaussalgo
+Jiri Polcar - Chief Data Scientist - Gauss Algorithmic
 
-Balazs Gaspar - Pre-sales Engineer @Cloudera
+Balazs Gaspar - Pre-sales Engineer - Cloudera
 
 ## setup
 
-To successfully run the workshop we suggest to fork this repo, then clone your fork to a local machine. Due to time limitations, certain sections of the live workshop will be fast forwarded. Nevertheless full details are available here in this repository so that you should be able to re-run any part or the whole workshop later on.
-
-During the workshop event, setting up a cluster is optional. As mentioned in the previous paragraph we will to fast forward certain sections using prepared scripting. In the case that you have decided to follow along during cluster setup, then we suggest to run a cluster on any cloud provider that is available to you, including one provided by your company, as long as your are capable of administering it.
-
-In terms of images we will be using CentOS images.  
+To successfully run the workshop we suggest to fork this repo, then clone your fork to a local machine or directly to your cloud instances. If you come across any mistakes, then don't hesitate to come to us or open an issue on GitHub repo.   
 
 ## workshop assumptions
 
@@ -34,9 +30,9 @@ The workshop material assumes you have knowledge and experience sufficient to:
 
 ## next steps
 
-* Basics of production Hadoop ecosystems and challenges ahead.
-* Your first proper cluster. 
-* Cool we have a cluster. Where's the data?
-* How to get to the machine learning part fast.
-* Handling diverse workloads
-* Simplifying production ML job lifecycles.
+* Basics of production Hadoop ecosystems.
+* Challenges of productionizing data science work.
+* Architecture and other concepts.
+* Cluster installation.
+* Handling diverse workloads.
+* Telco churn use case.
