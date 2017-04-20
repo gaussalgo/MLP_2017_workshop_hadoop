@@ -40,15 +40,15 @@ The following steps have been created based on our experience at Gauss Algorithm
 
 Being clear from a business perspective on what are the goals for adopting advance data analytics techniques and technology will help architects to create a better fit for purpose system at the right scale.
 
-* architectures based business cases requiring real-time data processing can be fundamentally different from those requiring computation across large datasets
-* understanding what type or workloads to expect help create a more specific design and avoid unnecessary/incorrect sizing
+* architectures based on business cases requiring real-time data processing can be fundamentally different from those requiring computation across large datasets
+* understanding what type or workloads to expect helps create a more specific design and avoid unnecessary/incorrect sizing
 
 ### Data strategy and governance
 
 **Data strategy** is mainly about step 1 being official and transparent to the company. Here are some ideas to consider:
 * Plan both short term and long term milestones.
 * Make realistic short term goals and ambitious long term goals.
-* Do not limit to solving issues in single departments.
+* Do not limit to solving issues in single departments. Get everyone's perspective early.
 * Monetization is more attractive then cost saving.
 
 **Data governance** can be done at different stages within the lifecycle. The main thing we tend to focus on is to be clear about roles and ownerships.

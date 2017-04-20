@@ -119,6 +119,8 @@ EOF
 
 3. forward and reverse host lookup
 
+First and foremost check that /etc/hosts doesn't have any entries pointing to the hostname!
+
   * forward lookup
 
     ```
@@ -149,6 +151,11 @@ For the workshop we will not setup any rules in IP tables. Though it is possible
 6. SELinux
 
 We suggest to disable SELinux on all boxes.
+
+to check:
+```
+getenforce
+```
 
 ### database
 
@@ -324,7 +331,7 @@ yum -y install oracle-j2sdk1.7
 yum -y install cloudera-manager-daemons cloudera-manager-server
 ```
 
-> Do not start the server right now.
+> Do not start the server right now !!!
 
 4. import the database schema <mark style="background-color: grey; padding:0;">[edge nodes]</mark>
 > The steps are a bit hard to find in the Cloudera documentation, but here is the [link](http://www.cloudera.com/documentation/enterprise/latest/topics/cm_ig_installing_configuring_dbs.html#concept_i2r_m3m_hn)
@@ -341,8 +348,80 @@ yum -y install cloudera-manager-daemons cloudera-manager-server
     > Its a good idea to watch what is happing in the logs in `/var/log/cloudera-scm-server/cloudera-scm-server.log`
     > This is the magical line you are looking for: `WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.`
 
-6. Login to Cloudera Manager as admin with password admin
+6. Open a browser and login to Cloudera Manager as admin with password admin
+
+http://<edge_node>:7180
+
+![](images/cm_login.png)
+
 7. Run the instructions in the wizard
+  a. Read and accept the end user license agreement.
+  ![](images/cm_step_a.png)
+  
+  b. Choose a Cloudera Manager edition (we will use Enterprise Data Hub trial). Press Continue.
+  ![](images/cm_step_b.png)
+
+  c. Check the installer version shown in the info page. Press Continue.
+  ![](images/cm_step_c.png)
+
+  d. Specify all hostnames and press search.
+  ![](images/cm_step_d.png)
+
+  e. Verify that server FQDN's are correct, IP's are correct and all hosts are in ready state. If ok press Continue.
+  ![](images/cm_step_e.png)
+
+  f. Choose desired repositories and installation options. (We will leave it as it is for now).
+  ![](images/cm_step_f.png)
+
+  g. JDK installation selection. For the workshop tick both boxes.
+  ![](images/cm_step_g.png)
+
+  h. DO NOT select single user mode.
+  ![](images/cm_step_h.png)
+
+  i. Add the ssh private key you use for root. (Download the key from the server if not done)
+  ![](images/cm_step_i.png)
+
+  j. Run the installation and check progress. All servers must have successful completion. Press Continue once done.
+  ![](images/cm_step_j_1.png)
+  ![](images/cm_step_j_2.png)
+
+  k. Let the parcels install. Press Continue.
+  ![](images/cm_step_k.png)
+
+  l. In the cluster setup page choose the desired services. In the workshop we'll run core Hadoop.
+  ![](images/cm_step_l.png)
+
+  m. Next we need to define the roles to the servers.
+  ![](images/cm_step_m.png)
+
+  n. Click on the view by host.
+  ![](images/cm_step_n.png)
+
+  o. In database setup enter credentials for the individual mariaDB databases.
+  ![](images/cm_step_o.png)
+
+  p. Next step looks at the most important configuration.
+
+  Make sure that for the workshop you have the following settings.
+    * dfs.block.size, dfs.blocksize = 128MiB
+    * dfs.datanode.failed.volumes.tolerated = 0
+    * dfs.data.dir, dfs.datanode.data.dir = /mnt/data/dfs/dn
+    * dfs.name.dir, dfs.namenode.name.dir = /mnt/data/dfs/nn
+    * fs.checkpoint.dir, dfs.namenode.checkpoint.dir = /mnt/data/dfs/snn
+    * hive.metastore.warehouse.dir = /user/hive/warehouse
+    * hive.metastore.port = 9083
+    * yarn.nodemanager.local-dirs = /mnt/data/yarn/nm
+    * dataDir = /mnt/zoo/zookeeper
+    * dataLogDir = /mnt/zoo/zookeeper
+
+  ![](images/cm_step_p.png)
+
+  q. Run and complete the cluster setup.
+  ![](images/cm_step_q.png)
+
+  r. Press Finish.
+
 8. Restart the cluster if required
 9. Setup HA
 10.
