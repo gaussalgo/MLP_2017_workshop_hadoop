@@ -1,6 +1,6 @@
 # MLP 2017 - Advanced data analysis on Hadoop clusters workshop
 
-This repository holds the materials for the workshop materials for the Machine Learning Prague 2017 workshop created by Gauss Algorithmic, focusing on methods and techniques of advanced data analysis we've used in enterprise environments.
+This repository holds the materials for the Machine Learning Prague 2017 workshop created by Gauss Algorithmic, focusing on methods and techniques of advanced data analysis we've used in enterprise environments.
 
 ## Goal of the workshop
 
@@ -18,7 +18,7 @@ Balazs Gaspar - Pre-sales Engineer - Cloudera
 
 ## Setup
 
-To successfully run the workshop we suggest to fork this repo, then clone your fork to a local machine or directly to your cloud instances. If you come across any mistakes, then don't hesitate to come to us or open an issue on GitHub repo.   
+To successfully run the workshop, we suggest to fork this repo, then clone your fork to a local machine or directly to your cloud instances. If you come across any mistakes, then don't hesitate to come to us or open an issue on GitHub repo.   
 
 ## Workshop assumptions
 
@@ -34,5 +34,4 @@ The workshop material assumes you have knowledge and experience sufficient to:
 * Challenges of production data science work.
 * Architecture and other concepts.
 * Cluster installation.
-* Handling diverse workloads.
-* Telco churn use case.
+* [Telco churn use case](https://github.com/gaussalgo/MLP_2017_workshop)

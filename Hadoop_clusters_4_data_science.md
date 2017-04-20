@@ -6,7 +6,7 @@ Hadoop has been a fundamental technology that has enabled techniques such as Mac
 
 ## Challenges that enterprise companies face today when adopting data science
 
-Data in enterprise is complex. The questions data scientists ask often require a very specific approach. Often they require to build advance models and methods to maintain a sustainable competitive advantage. It's important to understand the work of data scientists, where a major part of them solving complex issues is down to experimentation and innovation. Secondly data science teams are very diverse. Few companies will be able to find employees who have the whole skill package (statistics, machine learning, software engineering, mathematics, ...) and more realistically will create teams consisting of individuals skilled in one or two areas. These teams are most effective when they are not limited by technology or processes within the enterprise.
+Data in enterprise is complex. The questions data scientists ask often require a very specific approach. Often, they require to build advance models and methods to maintain a sustainable competitive advantage. It's important to understand the work of data scientists, where a major part of them solving complex issues is down to experimentation and innovation. Secondly data science teams are very diverse. Few companies will be able to find employees who have the whole skill package (statistics, machine learning, software engineering, mathematics, ...) and more realistically will create teams consisting of individuals skilled in one or two areas. These teams are most effective when they are not limited by technology or processes within the enterprise.
 
 ### too many software options
 
