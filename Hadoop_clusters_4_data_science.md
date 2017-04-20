@@ -63,30 +63,70 @@ Team Composition
 Function  | Roles  | Description  | Small Project  | Medium Project  | Large Project
 --|---|---|---|---|--
 Data Science  | Data Scientist  | A person or collection of people with developer, statistical and business domain expertise.  | 1  | 2  | 3
-  | Application Developer  | A person who develops new business applications and is a data steward for those applications.  | 0  | 1  | 3
-  | Power Analyst  | An analyst with programming skills that allow the creation of derived data products.  | 0  | 1  | 2
-  | Analyst  | A analyst who uses primarily SQL based analytic tools.  | 1  | 2  | 5
+---  | Application Developer  | A person who develops new business applications and is a data steward for those applications.  | 0  | 1  | 3
+---  | Power Analyst  | An analyst with programming skills that allow the creation of derived data products.  | 0  | 1  | 2
+---  | Analyst  | A analyst who uses primarily SQL based analytic tools.  | 1  | 2  | 5
 Data Engineering  | Data Engineer  | This role spans data management and analytics and is critical in the data discovery process. Has a domain understanding of both the data and the use cases and therefor is responsible for creating common profiles for elements to facilitate reusability.  | 0  | 1  | 2
-  | Data Stewards  | The person responsible for the data elements contained in a data source from an originating system. Is responsible for creating and logging data.  | 0  | 1  | 2
-  | Data Ingest (ETL)  | Responsible for developing the ingest and processing to onboard new data feeds and to apply simple schemas. This is a development role and is also considered a Jr. Data Engineer.  | 1  | 3  | 5
-  | Data Operations  | Responsible for the maintaining of Service Levels on end-to-end data pipelines. This is an operational role.  | 0  | 0  | 1
-  | Information Security  | Oversight and accountability for the installation and management of security systems across the entire organtization's network and enforcing compliance to data security, privacy and retention policies and processes.  | 0  | 0  | 1
+---  | Data Stewards  | The person responsible for the data elements contained in a data source from an originating system. Is responsible for creating and logging data.  | 0  | 1  | 2
+---  | Data Ingest (ETL)  | Responsible for developing the ingest and processing to onboard new data feeds and to apply simple schemas. This is a development role and is also considered a Jr. Data Engineer.  | 1  | 3  | 5
+---  | Data Operations  | Responsible for the maintaining of Service Levels on end-to-end data pipelines. This is an operational role.  | 0  | 0  | 1
+---  | Information Security  | Oversight and accountability for the installation and management of security systems across the entire organtization's network and enforcing compliance to data security, privacy and retention policies and processes.  | 0  | 0  | 1
 Infrastructure Architecture and Operations  | Enterprise Architect  | Owns the ecosystem Architecture and how it integrates with the other applications in the data center. Continuously explores new technology and determines how it integrates / impacts the ecosystem.  | 0  | 1  | 3
-  | Hadoop Administrator  | Responsible for cluster SLA's  | 1  | 1  | 2
-  | Network Administrator  | Network support for the cluster  | 0  | 0  | 1
-  | Systems Administrator  | Level 1/2 support for the cluster  | 0  | 1  |  1
-Total  |   |   | 4  | 14  | 31
+---  | Hadoop Administrator  | Responsible for cluster SLA's  | 1  | 1  | 2
+---  | Network Administrator  | Network support for the cluster  | 0  | 0  | 1
+---  | Systems Administrator  | Level 1/2 support for the cluster  | 0  | 1  |  1
+Total  | ---  | ---  | 4  | 14  | 31
 
 
 ## Architecture for data science at scale
 
-Basic points to consider:
+### Basic points to consider when designing a modern Hadoop ecosystem
+
 * batch vs. real-time
+* existing ecosystem
 * access patterns
+  * end user needs
+  * applications
+  * ingest
 * high availability
+* hardware vs cloud
+  * scale
+  * storage needs
+* security
+* support
+
+### Basic production setup
+
+Here is an example of a basic production setup.
+
+![](images/cluster_architecture.png)
+
+Features:
+* 2 Master nodes for HDFS Namenode and YARN ResourceManager HA
+* 3 realtime nodes for fast ingestion and processing
+* 8-20 worker nodes with storage (HDFS) and computation (Spark, Impala, YARN) features
+* 3 utility nodes for Cloudera software (Manager, Navigator, Data Science Workbench), gateway access, Hive metastore and other applications
+* Also this setup co-exists and utilizes existing infrastructure
+  * Active Directory (LDAP, Kerberos)
+  * Applications (internal, mobile)
+  * Monitoring Tools
 
 
-## The application toolbox
+> One you go over 20 worker nodes its recommended to slightly change the master setup. See ...
 
-* jupyter notebooks
-* Cloudera Data Science workbench
+### Brief description of tools and software
+
+* HDFS
+* YARN
+* Spark
+* Zookeeper
+* Hive
+* Impala
+* Kafka
+* Oozie
+* Cloudera Manager
+* HUE
+* Redis
+* Flume
+* Jupyter notebooks
+* Cloudera Data Science Workbench

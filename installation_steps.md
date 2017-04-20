@@ -1,13 +1,25 @@
-# Installing a production Hadoop cluster
+# Installing a Hadoop cluster with Cloudera Manager
 
-## assumptions
+## Assumptions
 
 * instances for each node type are up and accessible (ssh)
 * a supported OS is installed on each instance
 * a DNS server is available on the network and hostnames are resolvable
 * instances are on the same private network
-* hostnames are correctly setup
 * all commands will be run as root user unless specified otherwise
+
+## Official installation paths
+
+* [Path A: One-stop binary installer](http://www.cloudera.com/content/cloudera/en/documentation/core/latest/topics/cm_ig_install_path_a.html)
+    * Useful for short-term, throwaway projects
+    * Relies on embedded, hard-configured PostgreSQL server
+* [Path B: Install CM and database manually](http://www.cloudera.com/content/cloudera/en/documentation/core/latest/topics/cm_ig_install_path_b.html)
+    * Any cluster standing for more than 3-6 months
+    * Can use Oracle, MySQL, MariaDB, or PostgreSQL server
+    * Can deploy CDH as Linux packages or [parcels](http://www.cloudera.com/documentation/enterprise/latest/topics/cm_ig_parcels.html)
+* [Path C: Tarballs](http://www.cloudera.com/content/cloudera/en/documentation/core/latest/topics/cm_ig_install_path_c.html)
+    * DIY-oriented
+    * Useful with other deployment tools (Chef, Puppet)
 
 ## preinstall
 
@@ -310,5 +322,7 @@ yum -y install cloudera-manager-daemons cloudera-manager-server
     > This is the magical line you are looking for: `WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.`
 
 6. Login to Cloudera Manager as admin with password admin
-7. Read the license agreement
-8.
+7. Run the instructions in the wizard
+8. Restart the cluster if required
+9. Setup HA
+10.

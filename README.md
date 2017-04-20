@@ -2,11 +2,11 @@
 
 This repository holds the materials for the workshop materials for the Machine Learning Prague 2017 workshop created by Gauss Algorithmic, focusing on methods and techniques of advanced data analysis we've used in enterprise environments.
 
-## goal of the workshop
+## Goal of the workshop
 
 The goal of this workshop is to give attendees a blueprint for building an end-to-end enterprise-ready ML solution and demonstrate its usage on typical ML corporate use cases (telco, digital marketing).
 
-## speakers & mentors
+## Speakers & mentors
 
 Johnson Darkwah - Big Data Solution Architect - Gauss Algorithmic
 
@@ -16,11 +16,11 @@ Jiri Polcar - Chief Data Scientist - Gauss Algorithmic
 
 Balazs Gaspar - Pre-sales Engineer - Cloudera
 
-## setup
+## Setup
 
 To successfully run the workshop we suggest to fork this repo, then clone your fork to a local machine or directly to your cloud instances. If you come across any mistakes, then don't hesitate to come to us or open an issue on GitHub repo.   
 
-## workshop assumptions
+## Workshop assumptions
 
 The workshop material assumes you have knowledge and experience sufficient to:
 
@@ -28,7 +28,7 @@ The workshop material assumes you have knowledge and experience sufficient to:
 - Python programming skills
 - Understanding you cloud provider environment
 
-## next steps
+## Workshop topics
 
 * Basics of production Hadoop ecosystems.
 * Challenges of productionizing data science work.

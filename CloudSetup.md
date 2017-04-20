@@ -8,12 +8,12 @@ For those who wish to follow along during the workshop a public cloud setup is r
 
 For the purpose of the workshop we will build a 6 node cluster containing 2 master nodes, 3 worker nodes and 1 utility node.
 
-Master | Worker | Utility
---|---|--
-4 CPU cores | 12 CPU cores | 4 CPU cores
-32GB RAM | 32GB RAM | 32GB RAM
-90GB SSD | 320GB SSD | 90GB SSD
-   | Added block storage 6x100GB |   
+| Master       | Worker                      | Utility     |
+|:------------:|:---------------------------:|:-----------:|
+| 4 CPU cores  | 12 CPU cores                | 4 CPU cores |
+| 32GB RAM     | 32GB RAM                    | 32GB RAM    |
+| 90GB SSD     | 320GB SSD                   | 90GB SSD    |
+|    ---       | Added block storage 6x100GB |     ---     |   
 
 For the workshop we will use CentOS 7.3 images, but you are welcomed to try out any other Cloudera supported OS versions.
 
