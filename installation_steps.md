@@ -483,6 +483,36 @@ http://<edge_node>:7180
   q. Press Continue and wait until successfully completed
   r. Refresh any "Stale Configuration"
 
+11. Install Jupyter
+
+  a. install developement tools for CentOS 7 (gcc,make,...)
+  ```
+  yum groupinstall "Development Tools"
+  ```
+
+  b. install python-devel
+  ```
+  yum install python-devel
+  ```
+
+  c. install pip
+  ```
+  curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+  python get-pip.py
+  ```
+
+  d. install Jupyter
+  ```
+  pip install jupyter
+  ```
+
+  e. run with pyspark
+  ```
+  export PYSPARK_DRIVER_PYTHON=jupyter
+  export PYSPARK_DRIVER_PYTHON_OPTS="notebook --no-browser --ip=0.0.0.0 --allow-root"
+  pyspark2
+  ```
+
 ## Further reading
 
 [Blog: How to deploy Apache Hadoop clusters like a boss](http://blog.cloudera.com/blog/2015/01/how-to-deploy-apache-hadoop-clusters-like-a-boss/)

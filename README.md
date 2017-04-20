@@ -25,7 +25,7 @@ To successfully run the workshop we suggest to fork this repo, then clone your f
 The workshop material assumes you have knowledge and experience sufficient to:
 
 - Preparing a Linux platform for production use (centOS)
-- Python programming skills
+- Python and/or Scala programming skills
 - Understanding you cloud provider environment
 
 ## Workshop topics
