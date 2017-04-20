@@ -357,7 +357,7 @@ http://<edge_node>:7180
 7. Run the instructions in the wizard
   a. Read and accept the end user license agreement.
   ![](images/cm_step_a.png)
-  
+
   b. Choose a Cloudera Manager edition (we will use Enterprise Data Hub trial). Press Continue.
   ![](images/cm_step_b.png)
 
@@ -404,16 +404,26 @@ http://<edge_node>:7180
   p. Next step looks at the most important configuration.
 
   Make sure that for the workshop you have the following settings.
-    * dfs.block.size, dfs.blocksize = 128MiB
-    * dfs.datanode.failed.volumes.tolerated = 0
-    * dfs.data.dir, dfs.datanode.data.dir = /mnt/data/dfs/dn
-    * dfs.name.dir, dfs.namenode.name.dir = /mnt/data/dfs/nn
-    * fs.checkpoint.dir, dfs.namenode.checkpoint.dir = /mnt/data/dfs/snn
-    * hive.metastore.warehouse.dir = /user/hive/warehouse
-    * hive.metastore.port = 9083
-    * yarn.nodemanager.local-dirs = /mnt/data/yarn/nm
-    * dataDir = /mnt/zoo/zookeeper
-    * dataLogDir = /mnt/zoo/zookeeper
+
+    * `dfs.block.size, dfs.blocksize` = 128MiB
+
+    * `dfs.datanode.failed.volumes.tolerated` = 0
+
+    * `dfs.data.dir, dfs.datanode.data.dir` = /mnt/data/dfs/dn
+
+    * `dfs.name.dir, dfs.namenode.name.dir` = /mnt/data/dfs/nn
+
+    * `fs.checkpoint.dir, dfs.namenode.checkpoint.dir` = /mnt/data/dfs/snn
+
+    * `hive.metastore.warehouse.dir` = /user/hive/warehouse
+
+    * `hive.metastore.port` = 9083
+
+    * `yarn.nodemanager.local-dirs` = /mnt/data/yarn/nm
+
+    * `dataDir` = /mnt/zoo/zookeeper
+
+    * `dataLogDir` = /mnt/zoo/zookeeper
 
   ![](images/cm_step_p.png)
 
@@ -423,9 +433,58 @@ http://<edge_node>:7180
   r. Press Finish.
 
 8. Restart the cluster if required
+
 9. Setup HA
-10.
+  a. while logged into Cloudera Manager click on the HDFS service in Cluster 1
+  b. click on **Actions** button and then navigate to **Enable High Availability**
+  c. confirm the new nameservice
+  d. select a second namenode and 3 journal nodes
+  e. enter directory locations for namenode data (/mnt/data/dfs/nn) and journal node edits (/mnt/data/dfs/jn)
+  f. leave checkboxes as they are at the end of the screen
+  g. run the HA migration and wait until complete
+  h. check the new role instances in HDFS -> Instances section of Cloudera Manager
+
+
+10. Install Spark2.1
+
+  a. Download the Spark 2 CSD
+  ```
+  wget http://archive.cloudera.com/spark2/csd/SPARK2_ON_YARN-2.1.0.cloudera1.jar
+  ```
+
+  b. move the jar to the csd directory
+  ```
+  mv SPARK2_ON_YARN-2.1.0.cloudera1.jar /opt/cloudera/csd
+  ```
+
+  c. change permissions and ownership
+  ```
+  chown cloudera-scm:cloudera-scm /opt/cloudera/csd/SPARK2_ON_YARN-2.1.0.cloudera1.jar
+  chmod 644 /opt/cloudera/csd/SPARK2_ON_YARN-2.1.0.cloudera1.jar
+  ```
+
+  d. restart Cloudera Manager
+  ```
+  service cloudera-scm-server restart
+  ```
+
+  e. log back into Cloudera Manager and click on the "Stale Configuration" icon
+  f. click Restart Cloudera Management Service
+  g. click the parcels icon
+  h. Find SPARK2 in the list and click Download
+  i. Next click on Distribute
+  j. Finally click on Activate
+  k. Go back to the main screen
+  l. Next to Cluster 1 click on the dropdown and select "Add Service"
+  m. Select Spark 2
+  n. Choose the dependency with Hive, HDFS, YARN, Zookeeper
+  o. Add the Spark History Server role to one of the master nodes.
+  p. Select all hosts as gateway roles for Spark
+  q. Press Continue and wait until successfully completed
+  r. Refresh any "Stale Configuration"
 
 ## Further reading
 
-http://blog.cloudera.com/blog/2015/01/how-to-deploy-apache-hadoop-clusters-like-a-boss/
+[Blog: How to deploy Apache Hadoop clusters like a boss](http://blog.cloudera.com/blog/2015/01/how-to-deploy-apache-hadoop-clusters-like-a-boss/)
+[Cloudera Security Overview](https://www.cloudera.com/documentation/enterprise/5-9-x/topics/sg_edh_overview.html)
+[Enabling Kerberos Authentication Using the Wizard](https://www.cloudera.com/documentation/enterprise/latest/topics/cm_sg_intro_kerb.html)

@@ -4,8 +4,6 @@
 
 Hadoop has been a fundamental technology that has enabled techniques such as Machine Learning to be widely adopted. Data analytics is most efficient when done where the data lies and not moving it around, while still being able to perform individual tasks in parallel. Tools within the Hadoop ecosystem have been production tested by some of the largest organizations in world on use cases requiring real-time stream processing, distributed machine learning or exploratory data science. We've passed the point where we have struggled to process large volumes of data and it would be good to remind ourselves what Hadoop is and how enterprises can easily adopt it.
 
-...
-
 ## Challenges that enterprise companies face today when adopting data science
 
 Data in enterprise is complex. The questions data scientists ask often require a very specific approach. Often they require to build advance models and methods to maintain a sustainable competitive advantage. It's important to understand the work of data scientists, where a major part of them solving complex issues is down to experimentation and innovation. Secondly data science teams are very diverse. Few companies will be able to find employees who have the whole skill package (statistics, machine learning, software engineering, mathematics, ...) and more realistically will create teams consisting of individuals skilled in one or two areas. These teams are most effective when they are not limited by technology or processes within the enterprise.
