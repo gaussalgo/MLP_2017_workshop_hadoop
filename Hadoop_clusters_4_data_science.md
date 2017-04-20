@@ -78,7 +78,7 @@ Infrastructure Architecture and Operations  | Enterprise Architect  | Owns the e
 Total  | ---  | ---  | 4  | 14  | 31
 
 
-## Architecture for data science at scale
+## Architecture
 
 ### Basic points to consider when designing a modern Hadoop ecosystem
 
@@ -112,7 +112,7 @@ Features:
   * Monitoring Tools
 
 
-> One you go over 20 worker nodes its recommended to slightly change the master setup. See ...
+> One you go over 20 worker nodes its recommended to slightly change the master setup. See [documentation](https://www.cloudera.com/documentation/enterprise/latest/topics/cm_ig_host_allocations.html#concept_f43_j4y_dw)
 
 ### Brief description of tools and software
 
@@ -130,3 +130,9 @@ Features:
 * Flume
 * Jupyter notebooks
 * Cloudera Data Science Workbench
+
+## Further reading
+
+Some great articles to help you with designing and building a Hadoop Cluster.
+
+http://blog.cloudera.com/blog/2013/08/how-to-select-the-right-hardware-for-your-new-hadoop-cluster/

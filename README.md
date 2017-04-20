@@ -31,7 +31,7 @@ The workshop material assumes you have knowledge and experience sufficient to:
 ## Workshop topics
 
 * Basics of production Hadoop ecosystems.
-* Challenges of productionizing data science work.
+* Challenges of production data science work.
 * Architecture and other concepts.
 * Cluster installation.
 * Handling diverse workloads.

@@ -15,7 +15,7 @@ For the purpose of the workshop we will build a 6 node cluster containing 2 mast
 | 90GB SSD     | 320GB SSD                   | 90GB SSD    |
 |    ---       | Added block storage 6x100GB |     ---     |   
 
-For the workshop we will use CentOS 7.3 images, but you are welcomed to try out any other Cloudera supported OS versions.
+For the workshop we will use CentOS 7 images, but you are welcomed to try out any other Cloudera supported OS versions.
 
 ### Networking
 
@@ -38,4 +38,3 @@ Each instance needs to be connected to a private network so that inter-cluster c
 
 * simplest solution for Cloud installations in AWS, Azure and Google Cloud Platform
 * installs supported Cloudera clusters from scratch to production ready systems
-*

@@ -8,6 +8,8 @@
 * instances are on the same private network
 * all commands will be run as root user unless specified otherwise
 
+If you are missing anything then maybe check the [Cloud Setup documentation](CloudSetup.md).
+
 ## Official installation paths
 
 * [Path A: One-stop binary installer](http://www.cloudera.com/content/cloudera/en/documentation/core/latest/topics/cm_ig_install_path_a.html)
@@ -21,11 +23,13 @@
     * DIY-oriented
     * Useful with other deployment tools (Chef, Puppet)
 
-## preinstall
+> This workshop follows path B.
+
+## Preinstall
 
 ### Package updates and some handy tools
 
-Update the nodes and add some missing tools [all nodes]
+1. Update the nodes and add some missing tools [all nodes]
 
 ```
 yum clean all
@@ -42,6 +46,7 @@ To get the most out of your cluster, having enough disks is very important. In p
 * reduce the number of reserved blocks
 * create /mnt/data on master nodes as well
 * a good ratio is to have the same amount of disks as CPU cores
+* noatime disables writing access timestamps to disk
 
 workshop example for single worker node:
 ```
@@ -95,6 +100,8 @@ sysctl vm.swappiness=1
 echo "vm.swappiness = 1" >> /etc/sysctl.conf
 ```
 
+> Traditionally the vm.swapiness was recommended to be set to 0, but now the recommended value is 1. Check [this blog post](http://blog.cloudera.com/blog/2015/01/how-to-deploy-apache-hadoop-clusters-like-a-boss/)
+
 2. transparent hugepages
 
 ```
@@ -107,6 +114,8 @@ echo 'never' > /sys/kernel/mm/transparent_hugepage/defrag
 echo 'never' > /sys/kernel/mm/transparent_hugepage/enabled
 EOF
 ```
+
+> THP don't go well with Hadoop workloads and could cause degrade in performance.
 
 3. forward and reverse host lookup
 
@@ -129,9 +138,17 @@ EOF
     python -c 'import socket; print socket.getfqdn(), socket.gethostbyname(socket.getfqdn())'
     ```
 
-4. correct ntp settings
-  Make sure that ntp is set correctly and servers are synced.
+4. correct NTP settings
 
+Make sure you enable NTP on all of your hosts.
+
+5. IPTables
+
+For the workshop we will not setup any rules in IP tables. Though it is possible to return and setup IP tables at a later stage. Cloudera Manager has a section where all configured ports are visible and this can be used for IPTables setup.
+
+6. SELinux
+
+We suggest to disable SELinux on all boxes.
 
 ### database
 
@@ -236,7 +253,7 @@ Reload privilege tables now? [Y/n] Y
 All done!
 ```
 
-7. install the JDBC driver
+7. install the JDBC driver [all nodes]
 ```
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.41.tar.gz
 tar -xvzf mysql-connector-java-5.1.41.tar.gz
@@ -252,10 +269,11 @@ cp mysql-connector-java-5.1.41/mysql-connector-java-5.1.41-bin.jar /usr/share/ja
 yum install -y MariaDB-client
 ```
 
-9. enable access for Cloudera specific accounts
+9. enable access for Cloudera specific accounts [edge node]
 ```
 mysql -u root -p
 Enter password: <enter password>
+
 create database amon DEFAULT CHARACTER SET utf8;
 create database rman DEFAULT CHARACTER SET utf8;
 create database metastore DEFAULT CHARACTER SET utf8;
@@ -278,6 +296,8 @@ grant all privileges on oozie.* to 'oozie'@'localhost' identified by 'oozie';
 grant all privileges on oozie.* to 'oozie'@'%' identified by 'oozie';
 exit;
 ```
+
+> Simple passwords are setup to easy the flow of this workshop. In production consider stronger passwords.
 
 ## Install Cloudera Manager
 
@@ -326,3 +346,7 @@ yum -y install cloudera-manager-daemons cloudera-manager-server
 8. Restart the cluster if required
 9. Setup HA
 10.
+
+## Further reading
+
+http://blog.cloudera.com/blog/2015/01/how-to-deploy-apache-hadoop-clusters-like-a-boss/
