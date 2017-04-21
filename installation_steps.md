@@ -70,15 +70,15 @@ workshop example for a single master node:
 ```
 mkfs.ext4 -m 0 -F /dev/disk/by-id/scsi-0DO_Volume_zoo0
 tune2fs -m 0 /dev/disk/by-id/scsi-0DO_Volume_zoo0
-sudo mkdir -p /mnt/zoo; sudo mount -o discard,defaults /dev/disk/by-id/scsi-0DO_Volume_zoo0 /mnt/zoo; echo /dev/disk/by-id/scsi-0DO_Volume_zoo0 /mnt/zoo ext4 defaults,nofail,discard 0 0 | sudo tee -a /etc/fstab
+sudo mkdir -p /mnt/zoo; sudo mkdir -p /mnt/data; sudo mount -o discard,defaults /dev/disk/by-id/scsi-0DO_Volume_zoo0 /mnt/zoo; echo /dev/disk/by-id/scsi-0DO_Volume_zoo0 /mnt/zoo ext4 defaults,nofail,discard 0 0 | sudo tee -a /etc/fstab
 
 mkfs.ext4 -m 0 -F /dev/disk/by-id/scsi-0DO_Volume_zoo1
 tune2fs -m 0 /dev/disk/by-id/scsi-0DO_Volume_zoo1
-sudo mkdir -p /mnt/zoo; sudo mount -o discard,defaults /dev/disk/by-id/scsi-0DO_Volume_zoo1 /mnt/zoo; echo /dev/disk/by-id/scsi-0DO_Volume_zoo1 /mnt/zoo ext4 defaults,nofail,discard 0 0 | sudo tee -a /etc/fstab
+sudo mkdir -p /mnt/zoo; sudo mkdir -p /mnt/data; sudo mount -o discard,defaults /dev/disk/by-id/scsi-0DO_Volume_zoo1 /mnt/zoo; echo /dev/disk/by-id/scsi-0DO_Volume_zoo1 /mnt/zoo ext4 defaults,nofail,discard 0 0 | sudo tee -a /etc/fstab
 
 mkfs.ext4 -m 0 -F /dev/disk/by-id/scsi-0DO_Volume_zoo2
 tune2fs -m 0 /dev/disk/by-id/scsi-0DO_Volume_zoo2
-sudo mkdir -p /mnt/zoo; sudo mount -o discard,defaults /dev/disk/by-id/scsi-0DO_Volume_zoo2 /mnt/zoo; echo /dev/disk/by-id/scsi-0DO_Volume_zoo2 /mnt/zoo ext4 defaults,nofail,discard 0 0 | sudo tee -a /etc/fstab
+sudo mkdir -p /mnt/zoo; sudo mkdir -p /mnt/data; sudo mount -o discard,defaults /dev/disk/by-id/scsi-0DO_Volume_zoo2 /mnt/zoo; echo /dev/disk/by-id/scsi-0DO_Volume_zoo2 /mnt/zoo ext4 defaults,nofail,discard 0 0 | sudo tee -a /etc/fstab
 ```
 
 > The examples above are specific for digitalocean instances. The steps do not cover tasks like making disks available to the server.

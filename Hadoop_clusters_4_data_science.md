@@ -4,6 +4,49 @@
 
 Hadoop has been a fundamental technology that has enabled techniques such as Machine Learning to be widely adopted. Data analytics is most efficient when done where the data lies and not moving it around, while still being able to perform individual tasks in parallel. Tools within the Hadoop ecosystem have been production tested by some of the largest organizations in world on use cases requiring real-time stream processing, distributed machine learning or exploratory data science. We've passed the point where we have struggled to process large volumes of data and it would be good to remind ourselves what Hadoop is and how enterprises can easily adopt it.
 
+### Complexity of distributed systems
+
+**Motivation for Hadoop**
+
+* disk prices have decreased
+* capacity has grown
+* unfortunately transfer rates have not kept pace with disk capacity
+* traditionally computation has been processor-bound
+* Replacing a big computer with an even bigger computer will limit your scalability and it will just cost a lot of money
+
+**Features of an ideal distributed system**
+
+* Automatic - jobs can complete without manual intervention
+* Transparent - tasks assigned to a failed component are picked up by others
+* Graceful - Failure results only in portional loss of load capacity
+* Recoverable - Capacity is reclaimed when the failed component is later replaced/recovered
+* Consistent - Failure does not produce corruption or invalid results
+
+**More Requirements**
+
+* linear horizontal scalability
+* Jobs able to run in relative isolation (no interference)
+* Simple programming model
+
+### Core Components
+
+**Basic Hadoop Cluster**
+
+* HDFS - stores and distributes data
+* YARN framework
+  * Includes MapReduce version 2 for data processing
+* Utilities (Common tools)
+
+## Ecosystem tools
+
+* Data Processing: Spark
+* Data Analysis: Pig, Hive, Impala
+* Machine Learning: MLlib Mahout
+* Data Ingestion: Sqoop, Flume, Kafka
+* Coordination: Zookeeper
+* UX: Hue
+* Workflow Management: Oozie
+
 ## Challenges that enterprise companies face today when adopting data science
 
 Data in enterprise is complex. The questions data scientists ask often require a very specific approach. Often, they require to build advance models and methods to maintain a sustainable competitive advantage. It's important to understand the work of data scientists, where a major part of them solving complex issues is down to experimentation and innovation. Secondly data science teams are very diverse. Few companies will be able to find employees who have the whole skill package (statistics, machine learning, software engineering, mathematics, ...) and more realistically will create teams consisting of individuals skilled in one or two areas. These teams are most effective when they are not limited by technology or processes within the enterprise.
@@ -115,6 +158,7 @@ Features:
 ### Brief description of tools and software
 
 * HDFS
+  - Hadoop Distributed File System.
 * YARN
 * Spark
 * Zookeeper

@@ -8,7 +8,7 @@ The goal of this workshop is to give attendees a blueprint for building an end-t
 
 ## Speakers & mentors
 
-Johnson Darkwah - Big Data Solution Architect - Gauss Algorithmic
+Johnson Darkwah - Big Data Solution Architect - Gauss Algorithmic - darkwah@gaussalgo.com
 
 Karel Vaculik - Data Scientist - Gauss Algorithmic
 
