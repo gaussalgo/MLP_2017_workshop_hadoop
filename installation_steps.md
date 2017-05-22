@@ -369,7 +369,7 @@ http://<edge_node>:7180
 
   e. Verify that server FQDN's are correct, IP's are correct and all hosts are in ready state. If ok press Continue.
   ![](images/cm_step_e.png)
-
+  
   f. Choose desired repositories and installation options. (We will leave it as it is for now).
   ![](images/cm_step_f.png)
 
@@ -469,18 +469,31 @@ http://<edge_node>:7180
   ```
 
   e. log back into Cloudera Manager and click on the "Stale Configuration" icon
+  
   f. click Restart Cloudera Management Service
+  
   g. click the parcels icon
+  
   h. Find SPARK2 in the list and click Download
+  
   i. Next click on Distribute
+  
   j. Finally click on Activate
+  
   k. Go back to the main screen
+  
   l. Next to Cluster 1 click on the dropdown and select "Add Service"
+  
   m. Select Spark 2
+  
   n. Choose the dependency with Hive, HDFS, YARN, Zookeeper
+  
   o. Add the Spark History Server role to one of the master nodes.
+  
   p. Select all hosts as gateway roles for Spark
+  
   q. Press Continue and wait until successfully completed
+  
   r. Refresh any "Stale Configuration"
 
 11. Install Jupyter
